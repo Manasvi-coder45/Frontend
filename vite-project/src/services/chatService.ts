@@ -1,6 +1,6 @@
-import { ChatMessage } from '../types';
+// import { ChatMessage } from '../types';
 
-const API_URL = 'http://localhost:3001/api';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
 
 export async function sendMessage(message: string): Promise<string> {
   try {
@@ -22,4 +22,4 @@ export async function sendMessage(message: string): Promise<string> {
     console.error('Error sending message:', error);
     throw new Error('Failed to communicate with the server');
   }
-} 
+}
